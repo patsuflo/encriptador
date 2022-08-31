@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENCRIPTADOR</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="encriptastyle.css">
+
+
+</head>
+
+<body>
+    <header>
+        <h1> <img src="Logo.png"></h1>
+    </header>
+
+    <input type="text" id="output" class="texto2">
+
+    <div>
+        <img src="dibujo.png" id="muñeco">
+        <img src="Frame5.png" id="framecinco">
+    </div>
+
+    <div class="ingreseTexto">
+        <textarea id class="texto1" placeholder="Ingrese el texto aqui" required autocomplete="off"></textarea>
+        <p>Solo letras minusculas y sin acentos</p>
+    </div>
+    <button onclick='encriptar()' id="botonencriptar">Encriptar</button>
+    <button onclick='desencriptar()' id="botondesencriptar">Desencriptar</button>
+    <button onclick='copiar()' id="copiar">Copiar</button>
+    <button onclick='finalizar()' id="fin">Finalizar</button>
+
+    <script>
+        var textarea = document.querySelector("textarea");
+        var input = document.querySelector("input");
+        function encriptar() {
+            var mensajeEncrip = (textarea.value).replace(/e/g, "enter").replace(/i/g, "imes").replace(/a/g, "ai").replace(/o/g, "ober").replace(/u/g, "ufat");
+            input.value = (mensajeEncrip);
+            document.getElementById("framecinco").style.opacity = "0";
+            document.getElementById("muñeco").style.opacity = "0";
+            (textarea.value) = "";
+        }
+        function copiar() {
+            textarea.value = output.value;
+            (input.value) = "";
+            document.getElementById("framecinco").style.opacity = "1"
+            document.getElementById("muñeco").style.opacity = "1"
+        
+        }
+        function desencriptar() {
+            var mensajedesencriptado = (textarea.value).replace(/enter/g, "e").replace(/imes/g, "i").replace(/ai/g, "a").replace(/ober/g, "o").replace(/ufat/g, "u");
+            output.value = (mensajedesencriptado);
+            document.getElementById("framecinco").style.opacity = "0";
+            document.getElementById("muñeco").style.opacity = "0";
+            (textarea.value) = "";
+            
+
+        }
+
+        function finalizar(){
+            (output.value) = "";  
+            document.getElementById("framecinco").style.opacity = "1";
+            document.getElementById("muñeco").style.opacity = "1";
+           (output.value) = "";  
+
+        }
+       
+    </script>
+</body>
+
+<footer>
+    <p class="pie"> ©Copyrigth Patricia Flores </p>
+</footer>
+
+</html>
